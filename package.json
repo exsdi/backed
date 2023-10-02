@@ -1,5 +1,4 @@
 {
-  "proxy": "216.24.57.3:10000",
   "name": "backend",
   "version": "1.0.0",
   "description": "",
