@@ -8,7 +8,11 @@ const workoutRoutes = require('./routes/workouts.js');
 // express app
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://frontend-dusky-beta.vercel.app', // you can specify domains here if needed
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 app.use(express.json());
 
