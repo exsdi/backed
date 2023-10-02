@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const workoutRoutes = require('./routes/workouts.js');
 const cors = require('cors');
 
-const whiteList = ['frontend-tau-mocha.vercel.app', 'https://wger-app.netlify.app'];
+const whiteList = ['frontend-tau-mocha.vercel.app', 'https://crud-backend-64ny.onrender.com/api/workouts'];
 const corsOptions = {
     origin: function (origin, callback) {
         if (whiteList.indexOf(origin) !== -1 || !origin) {
