@@ -3,6 +3,20 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const workoutRoutes = require('./routes/workouts.js');
+const cors = require('cors');
+
+const whiteList = ['frontend-tau-mocha.vercel.app', 'https://wger-app.netlify.app'];
+const corsOptions = {
+    origin: function (origin, callback) {
+        if (whiteList.indexOf(origin) !== -1 || !origin) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    }
+}
+
+app.use(cors(corsOptions));
 
 // express app
 const app = express();
